@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio von Stanislav Burtsaev — Computational Linguistics, NLP und Machine Learning">
+
+  <meta name="description"
+        content="Portfolio von Stanislav Burtsaev — Computerlinguistik, NLP und Machine Learning">
+
   <title>Stanislav Burtsaev — Portfolio</title>
 
   <style>
     :root {
-      --text: #111111;
-      --muted: #666666;
-      --line: #d8d8d8;
-      --background: #ffffff;
-      --accent: #123a63;
-      --content-width: 880px;
+      --black: #0a0a0a;
+      --white: #f5f5f2;
+      --gray: #a6a6a0;
+      --line: #4a4a46;
+      --max-width: 1100px;
     }
 
     * {
@@ -26,119 +28,149 @@
 
     body {
       margin: 0;
-      background: var(--background);
-      color: var(--text);
+      background: var(--black);
+      color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.45;
     }
 
     a {
-      color: var(--accent);
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
+      color: var(--white);
+      text-decoration-color: var(--gray);
+      text-underline-offset: 4px;
     }
 
     a:hover {
-      color: var(--text);
+      color: var(--gray);
     }
 
     .container {
-      width: min(calc(100% - 40px), var(--content-width));
+      width: min(calc(100% - 48px), var(--max-width));
       margin: 0 auto;
     }
 
     header {
-      border-bottom: 1px solid var(--line);
-      padding: 28px 0 24px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 0 36px;
     }
 
-    .topline {
+    .topbar {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 24px;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .name {
+    .topbar p {
       margin: 0;
-      font-size: clamp(1.75rem, 5vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      line-height: 1;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 0.92rem;
+      gap: 18px;
     }
 
     nav a {
-      color: var(--text);
       text-decoration: none;
     }
 
     nav a:hover {
       text-decoration: underline;
-      text-underline-offset: 4px;
     }
 
-    .subtitle {
-      max-width: 650px;
-      margin: 20px 0 0;
-      color: var(--muted);
-      font-size: 1.05rem;
+    .hero {
+      padding: 90px 0;
     }
 
-    main {
-      padding: 52px 0 72px;
-    }
-
-    section {
-      padding: 0 0 46px;
-    }
-
-    section + section {
-      border-top: 1px solid var(--line);
-      padding-top: 46px;
-    }
-
-    h2 {
-      margin: 0 0 18px;
-      font-size: 0.78rem;
+    h1 {
+      max-width: 1000px;
+      margin: 0;
+      font-size: clamp(3.5rem, 11vw, 10rem);
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: -0.09em;
+      line-height: 0.82;
       text-transform: uppercase;
     }
 
-    p {
-      max-width: 720px;
-      margin: 0 0 16px;
+    .hero-text {
+      width: min(100%, 580px);
+      margin: 44px 0 0 auto;
+      color: var(--gray);
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
     }
 
-    .facts {
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--gray);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    main {
+      padding-bottom: 100px;
+    }
+
+    section {
       display: grid;
-      grid-template-columns: 145px 1fr;
-      max-width: 600px;
-      margin: 24px 0 0;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      padding: 42px 0 64px;
       border-top: 1px solid var(--line);
     }
 
-    .facts dt,
-    .facts dd {
+    h2 {
       margin: 0;
-      padding: 10px 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section-content {
+      max-width: 750px;
+    }
+
+    .section-content p {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .muted {
+      color: var(--gray);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-grid div {
+      padding: 15px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .facts dt {
-      color: var(--muted);
-    }
-
-    .facts dd {
-      font-weight: 500;
+    .info-grid div:nth-child(odd) {
+      color: var(--gray);
     }
 
     .project {
@@ -151,288 +183,379 @@
 
     summary {
       display: grid;
-      grid-template-columns: 76px 1fr auto;
-      align-items: baseline;
+      grid-template-columns: 60px 1fr auto;
       gap: 18px;
+      align-items: center;
       cursor: pointer;
+      padding: 22px 0;
       list-style: none;
-      padding: 19px 0;
     }
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-    summary::before {
-      content: "+";
-      grid-column: 3;
-      grid-row: 1;
-      font-size: 1.25rem;
-      line-height: 1;
-    }
-
-    details[open] summary::before {
-      content: "−";
-    }
-
     .project-number {
-      color: var(--muted);
+      color: var(--gray);
+      font-size: 0.85rem;
       font-variant-numeric: tabular-nums;
     }
 
-    .project-title {
+    .project-name {
+      font-size: 1.3rem;
       font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .project-toggle {
+      color: var(--gray);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    details[open] .project-toggle::after {
+      content: "−";
+    }
+
+    details:not([open]) .project-toggle::after {
+      content: "+";
     }
 
     .project-content {
-      max-width: 720px;
-      padding: 0 38px 24px 94px;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 0 0 28px;
+    }
+
+    .project-description {
+      grid-column: 2;
+      max-width: 600px;
     }
 
     .project-meta {
-      color: var(--muted);
+      margin: 20px 0;
+      color: var(--gray);
       font-size: 0.9rem;
     }
 
-    .project-link {
+    .github-link {
       display: inline-block;
-      margin-top: 7px;
+      border: 1px solid var(--white);
+      padding: 10px 14px;
+      font-size: 0.85rem;
       font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .github-link:hover {
+      background: var(--white);
+      color: var(--black);
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      max-width: 760px;
     }
 
     .skill {
-      border: 1px solid var(--text);
-      padding: 3px 9px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
       font-size: 0.9rem;
     }
 
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 24px;
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      font-size: 1.15rem;
     }
 
     footer {
-      padding: 20px 0 34px;
-      color: var(--muted);
-      font-size: 0.85rem;
+      padding: 25px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--gray);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 600px) {
-      .topline {
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      header {
+        min-height: 85vh;
+      }
+
+      .topbar,
+      .hero-footer {
         align-items: flex-start;
         flex-direction: column;
-        gap: 18px;
       }
 
-      main {
-        padding-top: 36px;
+      .topbar {
+        gap: 14px;
       }
 
-      .facts {
-        grid-template-columns: 105px 1fr;
+      section {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 32px 0 46px;
       }
 
-      summary {
-        grid-template-columns: 46px 1fr auto;
-        gap: 10px;
+      .info-grid {
+        grid-template-columns: 115px 1fr;
+      }
+
+      .info-grid div {
+        display: contents;
+      }
+
+      .info-grid span {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
       }
 
       .project-content {
-        padding: 0 0 24px 56px;
+        grid-template-columns: 1fr;
+        padding-left: 78px;
+      }
+
+      .project-description {
+        grid-column: auto;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <div class="topline">
-        <h1 class="name">Stanislav Burtsaev</h1>
+  <header class="container">
+    <div class="topbar">
+      <p>Portfolio / 2026</p>
 
-        <nav aria-label="Seitennavigation">
-          <a href="#ueber-mich">Über mich</a>
-          <a href="#projekte">Projekte</a>
-          <a href="#kenntnisse">Kenntnisse</a>
-          <a href="#kontakt">Kontakt</a>
-        </nav>
-      </div>
+      <nav aria-label="Navigation">
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kenntnisse">Kenntnisse</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
 
-      <p class="subtitle">
-        Student der Computerlinguistik in Bielefeld.
-        Interessen: Natural Language Processing, Machine Learning,
-        formale Semantik und Semantic Web.
+    <div class="hero">
+      <h1>Stanislav<br>Burtsaev</h1>
+
+      <p class="hero-text">
+        Student der Computerlinguistik an der Universität Bielefeld.
+        Ich arbeite an der Schnittstelle von Sprache, Daten und
+        maschinellem Lernen.
       </p>
+    </div>
+
+    <div class="hero-footer">
+      <span>Bielefeld, Deutschland</span>
+      <span>Computerlinguistik / NLP / ML</span>
     </div>
   </header>
 
   <main class="container">
     <section id="ueber-mich">
-      <h2>Über mich</h2>
+      <h2>01 / Über mich</h2>
 
-      <p>
-        Ich studiere Computerlinguistik an der Universität Bielefeld.
-        Mein Schwerpunkt liegt auf der computergestützten Analyse natürlicher
-        Sprache und auf Methoden des maschinellen Lernens.
-      </p>
+      <div class="section-content">
+        <p>
+          Ich studiere Computerlinguistik an der Universität Bielefeld.
+          Mein Interesse gilt der automatischen Verarbeitung natürlicher
+          Sprache, maschinellem Lernen und formaler Semantik.
+        </p>
 
-      <p>
-        In meinen Projekten arbeite ich mit Textklassifikation, Named Entity
-        Recognition, Transformer-Modellen sowie strukturierten semantischen
-        Daten. Ich interessiere mich besonders dafür, wie sich linguistische
-        Fragestellungen präzise modellieren und empirisch untersuchen lassen.
-      </p>
+        <p class="muted">
+          Ich entwickle und evaluiere datenbasierte Methoden zur Analyse von
+          Texten — von Textklassifikation und Named Entity Recognition bis zu
+          semantischer Modellierung mit RDF und SPARQL.
+        </p>
 
-      <dl class="facts">
-        <dt>Standort</dt>
-        <dd>Bielefeld, Deutschland</dd>
+        <div class="info-grid">
+          <div>
+            <span>Studium</span>
+            <span>Computerlinguistik, Universität Bielefeld</span>
+          </div>
 
-        <dt>Studium</dt>
-        <dd>Computerlinguistik, Universität Bielefeld</dd>
+          <div>
+            <span>Schwerpunkte</span>
+            <span>NLP, Machine Learning, Semantik</span>
+          </div>
 
-        <dt>Interessengebiete</dt>
-        <dd>NLP · ML · Semantik · Wissensrepräsentation</dd>
-      </dl>
+          <div>
+            <span>Standort</span>
+            <span>Bielefeld, Deutschland</span>
+          </div>
+
+          <div>
+            <span>Sprachen</span>
+            <span>Deutsch, Russisch, Englisch</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="projekte">
-      <h2>Ausgewählte Projekte</h2>
+      <h2>02 / Projekte</h2>
 
-      <div class="project">
-        <details>
-          <summary>
-            <span class="project-number">01</span>
-            <span>
-              <span class="project-title">Textklassifikation</span><br>
-              <span class="project-meta">Python · pandas · scikit-learn</span>
-            </span>
-          </summary>
+      <div class="section-content">
+        <div class="project">
+          <details>
+            <summary>
+              <span class="project-number">01</span>
+              <span class="project-name">Textklassifikation</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
 
-          <div class="project-content">
-            <p>
-              Vergleich mehrerer Verfahren zur automatischen Klassifikation
-              von Texten. Der Schwerpunkt liegt auf Datenaufbereitung,
-              Merkmalsextraktion, Modellvergleich und Evaluation.
-            </p>
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  Vergleich verschiedener Verfahren zur automatischen
+                  Klassifikation von Textdaten. Der Fokus liegt auf
+                  Datenaufbereitung, Modelltraining, Evaluation und
+                  nachvollziehbarer Fehleranalyse.
+                </p>
 
-            <a class="project-link"
-               href="https://github.com/stanislavburtsaev/DEIN-PROJEKT"
-               target="_blank"
-               rel="noopener noreferrer">
-              Zum GitHub-Repository ↗
-            </a>
-          </div>
-        </details>
-      </div>
+                <p class="project-meta">
+                  Python / pandas / scikit-learn / Jupyter Notebook
+                </p>
 
-      <div class="project">
-        <details>
-          <summary>
-            <span class="project-number">02</span>
-            <span>
-              <span class="project-title">Named Entity Recognition</span><br>
-              <span class="project-meta">spaCy · Hugging Face · Transformer</span>
-            </span>
-          </summary>
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/DEIN-REPOSITORY"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Repository öffnen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
 
-          <div class="project-content">
-            <p>
-              Experiment mit Verfahren zur Erkennung benannter Entitäten in
-              Texten. Untersucht werden regelbasierte und modellbasierte
-              Ansätze sowie ihre Fehlerquellen.
-            </p>
+        <div class="project">
+          <details>
+            <summary>
+              <span class="project-number">02</span>
+              <span class="project-name">Named Entity Recognition</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
 
-            <a class="project-link"
-               href="https://github.com/stanislavburtsaev/DEIN-PROJEKT"
-               target="_blank"
-               rel="noopener noreferrer">
-              Zum GitHub-Repository ↗
-            </a>
-          </div>
-        </details>
-      </div>
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  Untersuchung von Verfahren zur Erkennung benannter Entitäten
+                  in Texten. Das Projekt vergleicht regelbasierte Ansätze mit
+                  vortrainierten Sprachmodellen und dokumentiert typische
+                  Fehlerfälle.
+                </p>
 
-      <div class="project">
-        <details>
-          <summary>
-            <span class="project-number">03</span>
-            <span>
-              <span class="project-title">RDF und SPARQL</span><br>
-              <span class="project-meta">Semantic Web · RDF/XML · SPARQL</span>
-            </span>
-          </summary>
+                <p class="project-meta">
+                  Python / spaCy / Hugging Face / Transformer-Modelle
+                </p>
 
-          <div class="project-content">
-            <p>
-              Modellierung und Abfrage strukturierter Daten mit RDF und SPARQL.
-              Das Projekt verbindet Wissensrepräsentation mit linguistischen
-              oder historischen Forschungsfragen.
-            </p>
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/DEIN-REPOSITORY"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Repository öffnen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
 
-            <a class="project-link"
-               href="https://github.com/stanislavburtsaev/DEIN-PROJEKT"
-               target="_blank"
-               rel="noopener noreferrer">
-              Zum GitHub-Repository ↗
-            </a>
-          </div>
-        </details>
+        <div class="project">
+          <details>
+            <summary>
+              <span class="project-number">03</span>
+              <span class="project-name">RDF und SPARQL</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  Modellierung und Abfrage strukturierter Wissensdaten. Im
+                  Mittelpunkt stehen RDF, RDF/XML und SPARQL sowie ihre
+                  Anwendung auf sprachwissenschaftliche oder historische Daten.
+                </p>
+
+                <p class="project-meta">
+                  RDF / RDF/XML / SPARQL / Wissensrepräsentation
+                </p>
+
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/DEIN-REPOSITORY"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Repository öffnen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
     <section id="kenntnisse">
-      <h2>Kenntnisse</h2>
+      <h2>03 / Kenntnisse</h2>
 
-      <div class="skills" aria-label="Technische Kenntnisse">
-        <span class="skill">Python</span>
-        <span class="skill">pandas</span>
-        <span class="skill">scikit-learn</span>
-        <span class="skill">spaCy</span>
-        <span class="skill">Hugging Face</span>
-        <span class="skill">SentenceTransformers</span>
-        <span class="skill">NLP</span>
-        <span class="skill">Machine Learning</span>
-        <span class="skill">SPARQL</span>
-        <span class="skill">RDF/XML</span>
-        <span class="skill">Git</span>
+      <div class="section-content">
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">pandas</span>
+          <span class="skill">scikit-learn</span>
+          <span class="skill">spaCy</span>
+          <span class="skill">Hugging Face</span>
+          <span class="skill">SentenceTransformers</span>
+          <span class="skill">Natural Language Processing</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">RDF/XML</span>
+          <span class="skill">SPARQL</span>
+          <span class="skill">Git</span>
+          <span class="skill">Jupyter Notebook</span>
+        </div>
       </div>
     </section>
 
     <section id="kontakt">
-      <h2>Kontakt</h2>
+      <h2>04 / Kontakt</h2>
 
-      <p>Bei Fragen zu Projekten oder einer Zusammenarbeit freue ich mich über eine Nachricht.</p>
+      <div class="section-content">
+        <p>
+          Bei Fragen zu meinen Projekten oder einer möglichen Zusammenarbeit
+          freue ich mich über eine Nachricht.
+        </p>
 
-      <div class="contact-links">
-        <a href="https://github.com/stanislavburtsaev"
-           target="_blank"
-           rel="noopener noreferrer">
-          GitHub ↗
-        </a>
+        <div class="contact-list">
+          <a href="https://github.com/stanislavburtsaev"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub ↗
+          </a>
 
-        <a href="mailto:DEINE-EMAIL@beispiel.de">
-          E-Mail
-        </a>
+          <a href="mailto:DEINE-EMAIL@beispiel.de">
+            E-Mail schreiben ↗
+          </a>
 
-        <a href="https://www.linkedin.com/in/DEIN-PROFIL"
-           target="_blank"
-           rel="noopener noreferrer">
-          LinkedIn ↗
-        </a>
+          <a href="https://www.linkedin.com/in/DEIN-PROFIL"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="container">
-    © 2026 Stanislav Burtsaev
+    © 2026 Stanislav Burtsaev / Bielefeld, Deutschland
   </footer>
 </body>
 </html>
