@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Портфолио: Computational Linguistics, NLP и Machine Learning">
+  <title>Ваше имя — Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f1dfff;
+      --text: #171217;
+      --border: #171217;
+      --link: #3d225e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    main {
+      width: min(92%, 760px);
+      margin: 78px auto;
+    }
+
+    .header-box {
+      border: 2px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 115px;
+    }
+
+    .header-main {
+      padding: 10px 12px;
+      border-right: 2px solid var(--border);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.65rem, 5vw, 2.35rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .meta div {
+      padding: 10px 8px;
+    }
+
+    .meta div:first-child {
+      border-bottom: 2px solid var(--border);
+    }
+
+    .author-box {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      border: 2px solid var(--border);
+      border-top: 0;
+    }
+
+    .author-box strong,
+    .author-box span {
+      padding: 7px 8px;
+    }
+
+    .author-box strong {
+      border-right: 2px solid var(--border);
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+    }
+
+    details {
+      border: 2px solid var(--border);
+      margin: 14px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 12px;
+      font-weight: bold;
+    }
+
+    details > div {
+      border-top: 2px solid var(--border);
+      padding: 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li + li {
+      margin-top: 9px;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--border);
+      padding: 1px 5px;
+      margin: 2px 3px 2px 0;
+      font-size: 0.86rem;
+    }
+
+    footer {
+      margin-top: 42px;
+      padding-top: 12px;
+      border-top: 2px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        margin: 28px auto;
+      }
+
+      .header-box {
+        grid-template-columns: 1fr 94px;
+      }
+
+      .author-box {
+        grid-template-columns: 76px 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="header-box">
+        <div class="header-main">
+          <h1>ВАШЕ ИМЯ</h1>
+          <p class="subtitle">Computational Linguistics · NLP · ML</p>
+        </div>
+
+        <div class="meta">
+          <div><strong>v.</strong> 1.0</div>
+          <div><strong>updated</strong><br>08/2026</div>
+        </div>
+      </div>
+
+      <div class="author-box">
+        <strong>based in</strong>
+        <span>Bielefeld, Germany</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Обо мне</h2>
+
+      <p>
+        Привет! Я студент Computational Linguistics в Университете Билефельда.
+        Меня интересуют обработка естественного языка, языковые модели,
+        машинное обучение и формальная семантика.
+      </p>
+
+      <p>
+        Работаю с Python, pandas, scikit-learn, spaCy, Hugging Face,
+        SentenceTransformers, RDF/XML и SPARQL. Ищу возможности применять
+        вычислительные методы для анализа языка, текстов и дискурса.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ссылки</h2>
+
+      <div class="links">
+        <a href="https://github.com/ВАШ_ЛОГИН">GitHub</a>
+        <a href="https://www.linkedin.com/in/ВАШ_ПРОФИЛЬ">LinkedIn</a>
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="https://scholar.google.com/">Google Scholar</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Навыки</h2>
+
+      <span class="tag">Python</span>
+      <span class="tag">NLP</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">spaCy</span>
+      <span class="tag">Transformers</span>
+      <span class="tag">scikit-learn</span>
+      <span class="tag">pandas</span>
+      <span class="tag">SPARQL</span>
+      <span class="tag">RDF/XML</span>
+    </section>
+
+    <section>
+      <h2>Проекты</h2>
+
+      <details open>
+        <summary>▶ NLP и машинное обучение</summary>
+        <div>
+          <ul>
+            <li>
+              <a href="#">Text Classification</a> —
+              сравнение моделей для классификации текстов.
+            </li>
+            <li>
+              <a href="#">Named Entity Recognition</a> —
+              извлечение сущностей с использованием spaCy и Transformer-моделей.
+            </li>
+            <li>
+              <a href="#">Sentiment Analysis</a> —
+              анализ тональности и оценка качества моделей.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>▶ Семантика и Semantic Web</summary>
+        <div>
+          <ul>
+            <li>
+              <a href="#">RDF / SPARQL Project</a> —
+              запросы и моделирование лингвистических данных.
+            </li>
+            <li>
+              <a href="#">Formal Semantics</a> —
+              логические представления значений и композиционность.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>▶ Учёба и заметки</summary>
+        <div>
+          <ul>
+            <li><a href="#">Конспекты по NLP</a></li>
+            <li><a href="#">Заметки по ML</a></li>
+            <li><a href="#">Блог</a></li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>Контакты</h2>
+      <p>
+        Напишите мне: <a href="mailto:your.email@example.com">your.email@example.com</a>
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Ваше имя · Сделано на HTML/CSS · Размещено через GitHub Pages
+    </footer>
+  </main>
+</body>
+</html>
