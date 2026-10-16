@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio von Stanislav Burtsaev — Computerlinguistik, Natural Language Processing und Machine Learning">
+  <title>Stanislav Burtsaev — Portfolio</title>
+
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f5f2;
+      --gray: #a6a6a0;
+      --line: #4a4a46;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    a {
+      color: var(--white);
+      text-decoration-color: var(--gray);
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--gray);
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 0 36px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topbar p {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 90px 0;
+    }
+
+    h1 {
+      max-width: 100%;
+      margin: 0;
+      font-size: clamp(2.7rem, 5.4vw, 5.8rem);
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      line-height: 0.94;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-text {
+      width: min(100%, 630px);
+      margin: 48px 0 0 auto;
+      color: var(--gray);
+      font-size: clamp(1.12rem, 2vw, 1.45rem);
+      line-height: 1.45;
+    }
+
+    main {
+      padding-bottom: 100px;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      padding: 42px 0 64px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section-content {
+      max-width: 750px;
+    }
+
+    .section-content p {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .muted {
+      color: var(--gray);
+    }
+
+    .project {
+      border-top: 1px solid var(--line);
+    }
+
+    .project:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      cursor: pointer;
+      padding: 22px 0;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .project-number {
+      color: var(--gray);
+      font-size: 0.85rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .project-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .project-toggle {
+      color: var(--gray);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    details[open] .project-toggle::after {
+      content: "−";
+    }
+
+    details:not([open]) .project-toggle::after {
+      content: "+";
+    }
+
+    .project-content {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      padding: 0 0 28px;
+    }
+
+    .project-description {
+      grid-column: 2;
+      max-width: 600px;
+    }
+    
+    .project-description p {
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+    
+    .project-description strong {
+      color: var(--white);
+    }
+
+    .project-meta {
+      margin: 20px 0;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .github-link {
+      display: inline-block;
+      border: 1px solid var(--white);
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .github-link:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      font-size: 1.15rem;
+    }
+
+    footer {
+      padding: 25px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--gray);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      header {
+        min-height: 85vh;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 64px 0;
+      }
+
+      section {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 32px 0 46px;
+      }
+
+      summary {
+        grid-template-columns: 46px 1fr auto;
+        gap: 10px;
+      }
+
+      .project-content {
+        grid-template-columns: 1fr;
+        padding-left: 56px;
+      }
+
+      .project-description {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <div class="topbar">
+      <p>Stanislav Burtsaev / Portfolio / 2026</p>
+
+      <nav aria-label="Navigation">
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kenntnisse">Kenntnisse</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1>
+        Computerlinguistik.<br>
+        Natural Language Processing.<br>
+        Maschinelles Lernen.
+      </h1>
+
+      <p class="hero-text">
+        Ich studiere Computerlinguistik an der Universität Bielefeld.
+        Meine Interessen liegen in der automatischen Sprachverarbeitung,
+        im maschinellen Lernen und in der formalen Semantik. Besonders
+        interessiert mich, wie sprachliche Daten mit computergestützten
+        Methoden analysiert, modelliert und kritisch evaluiert werden können.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="ueber-mich">
+      <h2>01 / Über mich</h2>
+
+      <div class="section-content">
+        <p>
+          Ich entwickle und evaluiere datenbasierte Methoden zur Analyse von
+          Texten — von Textklassifikation und Named Entity Recognition bis zu
+          semantischer Modellierung mit RDF und SPARQL.
+        </p>
+
+        <p class="muted">
+          Dabei interessieren mich sowohl praktische NLP-Anwendungen als auch
+          die sprachwissenschaftlichen und formalen Grundlagen der
+          Bedeutungsrepräsentation.
+        </p>
+      </div>
+    </section>
+
+    <section id="projekte">
+      <h2>02 / Projekte</h2>
+
+      <div class="section-content">
+        <!-- Projekt 1 -->
+        <div class="project">
+          <details open>
+            <summary>
+              <span class="project-number">01</span>
+              <span class="project-name">Rallye-Datenmodellierung mit RDF & Wikidata</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  <strong>Die Idee:</strong> Komplexe historische Ereignisse wie die Rallye Monte Carlo 1999 maschinenlesbar machen. Das Ziel war es, ein semantisches Modell zu entwerfen, das Fragen wie "Welcher Fahrer in welchem Team fuhr welches Auto?" präzise über Abfragen beantworten kann.
+                </p>
+                <p>
+                  <strong>Das Vorgehen:</strong> Ich entwickelte ein formales RDF/RDFS-Modell, das Motorsportdaten wie Crews, Teams, Fahrzeugspezifikationen und Ergebnisse strukturiert. Über SPARQL-Queries lassen sich die Daten abfragen, wobei lokale Ressourcen semantisch mit der Knowledge Base von Wikidata verknüpft wurden, um die Datenbasis zu erweitern.
+                </p>
+                <p>
+                  <strong>Ergebnisse & Herausforderungen:</strong> Die Abbildung dynamischer Ereignisse in einer statischen Graphen-Struktur erforderte ein tiefes Verständnis von Ontologien. Das Modell funktioniert erfolgreich und ermöglicht komplexe relationale Abfragen über das semantische Netz.
+                </p>
+                <p>
+                  <strong>Fazit:</strong> Daten sind nur so gut wie ihre Relationen. Wird die Zukunft des Sports vollständig in Knowledge Graphs abgebildet sein, um Vorhersagen in Echtzeit zu treffen?
+                </p>
+
+                <p class="project-meta">
+                  RDF / RDFS / Semantic Web / XML / SPARQL / Wikidata
+                </p>
+
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/rally-rdf-model"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Repository öffnen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Projekt 2 -->
+        <div class="project">
+          <details>
+            <summary>
+              <span class="project-number">02</span>
+              <span class="project-name">Analyse von Bundestagsdebatten zur Wehrpflicht</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  <strong>Die Idee:</strong> Wie diskutiert die Politik über die Wehrpflicht? In großen Textarchiven gehen Nuancen oft verloren. Dieses Projekt automatisiert die Extraktion von Argumenten und ihren rhetorischen Kontexten (Frames) aus politischen Reden.
+                </p>
+                <p>
+                  <strong>Das Vorgehen:</strong> Mit Python wurde ein komplexer XML-Parser implementiert, der Plenarprotokolle des Deutschen Bundestages einliest. Die Software extrahiert einzelne Reden, ordnet sie den Abgeordneten sowie Fraktionen zu und führt eine framebasierte Kontextanalyse durch (z. B. Zuordnung zu Kategorien wie „Sicherheit“, „Freiheit“, „Personal“).
+                </p>
+                <p>
+                  <strong>Ergebnisse & Herausforderungen:</strong> Die größte Hürde war die teils inkonsistente und tief verschachtelte XML-Struktur der amtlichen Dokumente. Die finale Pipeline transformiert rohe XML-Daten zuverlässig in strukturierte DataFrames, die detaillierte semantische Analysen erlauben.
+                </p>
+                <p>
+                  <strong>Fazit:</strong> Algorithmen können die verborgene Struktur politischer Rhetorik aufdecken. Werden NLP-Modelle bald nicht nur Frames erkennen, sondern politische Debatten in Echtzeit einem Fact-Checking unterziehen?
+                </p>
+
+                <p class="project-meta">
+                  Python / XML Parsing / NLP / Frame-Analyse / pandas
+                </p>
+
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/bundestag-debatten"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Repository öffnen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Projekt 3 -->
+        <div class="project">
+          <details>
+            <summary>
+              <span class="project-number">03</span>
+              <span class="project-name">Evaluierung linguistischer Unsicherheit in LLMs</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  <strong>Die Idee:</strong> Wie gut verstehen Sprachmodelle feinste sprachliche Nuancen, die Unsicherheit ausdrücken? Ziel war es, die systematische Erfassung von Ambiguität und epistemischer Modalität durch lokale KI-Modelle zu testen.
+                </p>
+                <p>
+                  <strong>Das Vorgehen:</strong> Das Herzstück des Projekts ist ein kontrolliertes Experiment-Design. Ich erstellte einen Datensatz aus 50 linguistischen Minimalpaaren. Die Testreihen wurden per Python-Skript automatisiert über die lokale HTTP-API von LM Studio ausgeführt, wobei verschiedene Prompting-Strategien evaluiert wurden.
+                </p>
+                <p>
+                  <strong>Ergebnisse & Herausforderungen:</strong> Die Herausforderung bestand darin, konsistente und auswertbare Antworten von Modellen zu erhalten, die oft zu „Schwafeln“ neigen. Die Automatisierung der API-Aufrufe funktionierte reibungslos und offenbarte signifikante Schwankungen in der Art, wie LLMs Wahrscheinlichkeiten semantisch repräsentieren.
+                </p>
+                <p>
+                  <strong>Fazit:</strong> Sprachmodelle haben noch Probleme mit der Metasprache über ihre eigene Gewissheit. Wenn KI-Systeme ihre eigene epistemische Unsicherheit grammatikalisch maskieren — wie können wir dann transparente Systeme für linguistische Analysen bauen?
+                </p>
+
+                <p class="project-meta">
+                  Python / LLM Evaluation / Prompt Engineering / LM Studio API
+                </p>
+
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/llm-uncertainty-study"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Repository öffnen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Projekt 4 -->
+        <div class="project">
+          <details>
+            <summary>
+              <span class="project-number">04</span>
+              <span class="project-name">Halluzinationen vs. Konfidenz: Ein Test von vier LLMs</span>
+              <span class="project-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div class="project-content">
+              <div class="project-description">
+                <p>
+                  <strong>Die Idee:</strong> Wie sicher wirken Sprachmodelle, wenn sie eigentlich falschliegen? In diesem Projekt habe ich untersucht, ob und wie verschiedene LLMs Unsicherheit kommunizieren, wenn ihnen das nötige Weltwissen fehlt.
+                </p>
+                
+                <p>
+                  <strong>Das Vorgehen:</strong> Über das KI-Portal „BIKI“ der Uni Bielefeld wurden vier Modelle (Qwen, DeepSeek, GPT-5.4 mini und GPT-5.4) einem Stresstest unterzogen. Jedes Modell beantwortete 50 identische Fragen aus Bereichen wie Technik, Geschichte und Popkultur — strikt offline und ohne Suchfunktion. Die Auswertung fokussierte sich auf die Korrelation zwischen der inhaltlichen Richtigkeit und der sprachlich geäußerten Konfidenz (Confidence-Level: HI, LO, DK).
+                </p>
+
+                <p>
+                  <strong>Ergebnisse & Herausforderungen:</strong> Die Ergebnisse waren teils alarmierend. Modelle wie Qwen (50% Genauigkeit) und DeepSeek V4 (54% Genauigkeit) zeigten kaum vorsichtige Formulierungen und verkauften falsche Fakten fast durchgehend mit absoluter Sicherheit. Nur GPT-5.4 (80% Genauigkeit) nutzte häufiger „Low Confidence“-Marker oder gab zu, etwas nicht zu wissen.
+                </p>
+
+                <p>
+                  <strong>Fazit:</strong> Sprachmodelle haben weiterhin massive Probleme, ihre eigenen Wissenslücken zu erkennen. Die Frage bleibt: Wenn selbst das beste Modell im Test noch 5 falsche Antworten mit maximaler Sicherheit generiert hat — wie stark dürfen wir uns im produktiven Einsatz auf LLMs verlassen?
+                </p>
+
+                <p class="project-meta">
+                  LLM Evaluation / Prompt Engineering / Data Analysis / BIKI-Portal
+                </p>
+
+                <a class="github-link"
+                   href="https://github.com/stanislavburtsaev/biki-llm-test"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Präsentation ansehen ↗
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="kenntnisse">
+      <h2>03 / Kenntnisse</h2>
+
+      <div class="section-content">
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">pandas</span>
+          <span class="skill">scikit-learn</span>
+          <span class="skill">spaCy</span>
+          <span class="skill">Hugging Face</span>
+          <span class="skill">Natural Language Processing</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">LLM Evaluation</span>
+          <span class="skill">Prompt Engineering</span>
+          <span class="skill">RDF / RDFS</span>
+          <span class="skill">SPARQL</span>
+          <span class="skill">XML Parsing</span>
+          <span class="skill">Git</span>
+          <span class="skill">Jupyter Notebook</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <h2>04 / Kontakt</h2>
+
+      <div class="section-content">
+        <p>
+          Bei Fragen zu meinen Projekten oder einer möglichen Zusammenarbeit
+          freue ich mich über eine Nachricht.
+        </p>
+
+        <div class="contact-list">
+          <a href="https://github.com/stanislavburtsaev"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+
+          <a href="mailto:stanislav.burtsaev@uni-bielefeld.de">
+            stanislav.burtsaev@uni-bielefeld.de ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    © 2026 Stanislav Burtsaev / Bielefeld, Deutschland
+  </footer>
+</body>
+</html>
